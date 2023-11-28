@@ -1,12 +1,32 @@
-import React from 'react';
-import '../index.css'
+import React, { useState } from "react";
+import "../index.css";
 
-const TaskManagmentApp = () =>{
-    return(
-        <div>
-            <h1 className="text-green-700">Hello World</h1>
-        </div>
-    )
-}
+import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
-export default TaskManagmentApp
+import Home from "./Home";
+import Landing from "./Landing";
+
+import MyTask from "./MyTask";
+
+
+const TaskManagmentApp = () => {
+
+    
+  const appRouter = createBrowserRouter([
+    { path: "/", element: <Landing /> },
+    { path: "/home", element: <Home /> },
+    {
+      path: "/mytask",
+      element: <MyTask/>,
+    },
+  ]);
+
+  return (
+    <div>
+      <RouterProvider router={appRouter} />
+    </div>
+  );
+};
+
+export default TaskManagmentApp;
