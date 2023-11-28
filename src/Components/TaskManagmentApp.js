@@ -12,13 +12,19 @@ import MyTask from "./MyTask";
 
 const TaskManagmentApp = () => {
 
+    const [tasks, setTasks] = useState([]);
+
+    const addTask = (newTask) => {
+      setTasks([...tasks, newTask]);
+    };
+
     
   const appRouter = createBrowserRouter([
     { path: "/", element: <Landing /> },
-    { path: "/home", element: <Home /> },
+    { path: "/home", element: <Home addTask={addTask}/> },
     {
       path: "/mytask",
-      element: <MyTask/>,
+      element: <MyTask tasks={tasks}/>,
     },
   ]);
 

@@ -34,8 +34,8 @@
 
 import React, { useState } from 'react';
 
-const TodoForm = () => {
-  const [tasks, setTasks] = useState([]);
+const TodoForm = ({addTask}) => {
+  // const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState({
     taskName: '',
     taskDescription: '',
@@ -52,14 +52,14 @@ const TodoForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTasks([...tasks, task]); // Add the new task to the tasks array
+   addTask(task);
     setTask({  // Reset the task input fields after adding the task
       taskName: '',
       taskDescription: '',
       priorityLevel: 'low',
     });
 
-    console.log(tasks);
+    
   };
 
   return (

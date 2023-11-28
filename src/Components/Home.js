@@ -2,11 +2,11 @@ import React from 'react'
 import Header from './Header'
 import TodoForm from './TodoForm'
 
-const Home = () => {
+const Home = ({addTask}) => {
   return (
     <div>
          <Header />
-      <TodoForm />
+      <TodoForm addTask={addTask} />
     </div>
   )
 }
