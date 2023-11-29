@@ -19,6 +19,11 @@ const Header = () => {
               My Tasks
             </Link>
           </li>
+          <li>
+            <Link to="/editedtask" className="hover:text-gray-300">
+              Edited Tasks
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -1,31 +1,37 @@
-import React, { useState } from "react";
-import "../index.css";
-
-import { createBrowserRouter } from "react-router-dom";
-import { RouterProvider } from "react-router-dom";
-
-import Home from "./Home";
-import Landing from "./Landing";
-
-import MyTask from "./MyTask";
-
+import React, { useState, useEffect } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import Home from './Home';
+import Landing from './Landing';
+import MyTask from './MyTask';
+import EditedTask from './EditedTask';
 
 const TaskManagmentApp = () => {
+  const [tasks, setTasks] = useState([]);
+  const [editedTasks, setEditedTasks] = useState([]);
 
-    const [tasks, setTasks] = useState([]);
+  useEffect(() => {
+    // Update editedTasks whenever tasks are updated
+    const updatedEditedTasks = tasks.filter(task => task.edited);
+    setEditedTasks(updatedEditedTasks);
+  }, [tasks]);
 
-    const addTask = (newTask) => {
-      setTasks([...tasks, newTask]);
-    };
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
 
-    
+  const updateTask = (updatedTask) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === updatedTask.id ? { ...task, ...updatedTask, edited: true } : task
+    );
+    setTasks(updatedTasks);
+  };
+
   const appRouter = createBrowserRouter([
-    { path: "/", element: <Landing /> },
-    { path: "/home", element: <Home addTask={addTask}/> },
-    {
-      path: "/mytask",
-      element: <MyTask tasks={tasks}/>,
-    },
+    { path: '/', element: <Landing /> },
+    { path: '/home', element: <Home addTask={addTask} /> },
+    { path: '/editedtask', element: <EditedTask editedTasks={editedTasks} /> },
+    { path: '/mytask', element: <MyTask tasks={tasks} updateTask={updateTask} /> },
   ]);
 
   return (
@@ -36,3 +42,4 @@ const TaskManagmentApp = () => {
 };
 
 export default TaskManagmentApp;
+

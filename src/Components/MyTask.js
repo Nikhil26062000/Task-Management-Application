@@ -1,14 +1,15 @@
-import React from 'react'
-import TaskList from './TaskList'
-import Header from './Header'
 
-const MyTask = ({tasks}) => {
+import React from 'react';
+import TaskList from './TaskList';
+import Header from './Header';
+
+const MyTask = ({ tasks, updateTask }) => {
   return (
     <div>
-         <Header />
-        <TaskList tasks={tasks}/>
+     <Header />
+      <TaskList tasks={tasks} updateTask={updateTask} />
     </div>
-  )
-}
+  );
+};
 
-export default MyTask
+export default MyTask;
