@@ -1,3 +1,81 @@
+# Project Name
+TASK MANAGEMENT APPLICATION
+
+## Overview
+This project aims to Add new Task, Displays a list of tasks, allows editing, deletion, and task completion..
+
+## Installation
+To set up the development environment, follow these steps:
+
+1. Clone this repository: `git clone <repository-url>`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
+
+## Components
+The project structure is organized into the following components:
+
+- **TaskManagementApp:** Parent component managing tasks and task editing.
+- **TaskList:** Displays a list of tasks, allows editing, deletion, and task completion.
+- **TaskItem:** Represents individual tasks in the task list.
+
+## Development Process
+
+### 1. Project Initiation
+The project was initiated with the objective of creating a task management system using React.
+
+Tools used:
+- React
+- React Router DOM
+
+### 2. Environment Setup
+The development environment was set up using Node.js and npm. React and other required dependencies were installed.
+
+Tech Stack:
+- Node.js
+- React
+- React Router DOM
+
+### 3. Component Design and Structure
+The components were designed in a hierarchical structure:
+
+- TaskManagementApp
+  - TaskList
+    - TaskItem
+
+### 4. Coding Process
+The code logic focused on managing task state, implementing task editing, deletion, and completion functionalities.
+
+Key Logic:
+- State management using React Hooks (useState, useEffect)
+- Task addition, deletion, editing, and completion logic
+
+### 5. Component Implementation
+Components were implemented as follows:
+
+- **TaskManagementApp:** Manages tasks and edited tasks state.
+- **TaskList:** Displays a grid of tasks, handles editing, deletion, and task completion.
+- **TaskItem:** Represents an individual task with checkboxes, task details, and editing functionality.
+
+### 6. Testing Phase
+Test cases were created to ensure component functionalities:
+
+- TaskList component tested for rendering task names, checkboxes, and header.
+
+### 7. Troubleshooting and Bug Fixing
+Identified and resolved issues related to:
+- Local storage persistence
+- Rendering of components on page refresh
+
+
+
+### 9. Final Checks and Validation
+Functionality was validated to ensure:
+- Tasks were added, edited, and deleted successfully.
+
+## Conclusion and Next Steps
+The project successfully achieved its objective of creating a task management system using React. Future enhancements might include user authentication, additional task attributes, and improved UI/UX.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

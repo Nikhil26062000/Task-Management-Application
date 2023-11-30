@@ -6,7 +6,7 @@ const Header = () => {
     <header className="bg-gray-800 text-white">
       <nav className="container mx-auto px-4 flex justify-between items-center py-4">
         <div className="text-2xl font-bold text-white hover:text-gray-300">
-          Todo App
+          <h1>Todo App</h1>
         </div>
         <ul className="flex space-x-4">
           <li>
