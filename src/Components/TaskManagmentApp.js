@@ -72,7 +72,7 @@ const TaskManagmentApp = () => {
       ),
     },
   ],{
-    basename: "",
+    basename: "/Task-Management-Application",
   });
 
   return (
