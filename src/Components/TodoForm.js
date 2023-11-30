@@ -1,37 +1,25 @@
+import React, { useEffect, useState } from "react";
 
-
-import React, { useEffect, useState } from 'react';
-
-const TodoForm = ({addTask}) => {
+const TodoForm = ({ addTask }) => {
   const [numbers, setNumbers] = useState([]);
   // const [id, setId] = useState();
-
- 
 
   const generateRandomNumber = () => {
     const randomNumber = Math.floor(Math.random() * 1000000) + 1;
 
-  
     return randomNumber;
   };
 
-   const number = generateRandomNumber();
-  
-    
+  const number = generateRandomNumber();
 
-
- 
-
-   
-  const [count,setCount] = useState(number);
+  const [count, setCount] = useState(number);
   // const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState({
-    id:count,
-    taskName: '',
-    taskDescription: '',
-    priorityLevel: 'low',
+    id: count,
+    taskName: "",
+    taskDescription: "",
+    priorityLevel: "low",
     completed: false,
-
   });
 
   const handleInputChange = (e) => {
@@ -45,23 +33,17 @@ const TodoForm = ({addTask}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   addTask(task);
-   setCount(count+1000);
-  
-    setTask({  
-      id:count+1000,
-      taskName: '',
-      taskDescription: '',
-      priorityLevel: 'low',
-      completed:false,
-      
+    addTask(task);
+    setCount(count + 1000);
+
+    setTask({
+      id: count + 1000,
+      taskName: "",
+      taskDescription: "",
+      priorityLevel: "low",
+      completed: false,
     });
-   
-
-    
   };
-
-
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -69,7 +51,12 @@ const TodoForm = ({addTask}) => {
         <h1 className="text-3xl font-bold mb-6 text-center">Create a Task</h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="taskName" className="block text-gray-700 font-semibold">Task Name*</label>
+            <label
+              htmlFor="taskName"
+              className="block text-gray-700 font-semibold"
+            >
+              Task Name*
+            </label>
             <input
               type="text"
               id="taskName"
@@ -80,10 +67,17 @@ const TodoForm = ({addTask}) => {
               placeholder="Enter task name"
               required
             />
-            <div className="text-red-500 text-xs mt-200">Please enter a task name.</div>
+            <div className="text-red-500 text-xs mt-200">
+              Please enter a task name.
+            </div>
           </div>
           <div>
-            <label htmlFor="taskDescription" className="block text-gray-700 font-semibold">Task Description</label>
+            <label
+              htmlFor="taskDescription"
+              className="block text-gray-700 font-semibold"
+            >
+              Task Description
+            </label>
             <textarea
               id="taskDescription"
               name="taskDescription"
@@ -95,7 +89,12 @@ const TodoForm = ({addTask}) => {
             ></textarea>
           </div>
           <div>
-            <label htmlFor="priorityLevel" className="block text-gray-700 font-semibold">Priority Level</label>
+            <label
+              htmlFor="priorityLevel"
+              className="block text-gray-700 font-semibold"
+            >
+              Priority Level
+            </label>
             <select
               id="priorityLevel"
               name="priorityLevel"
@@ -108,9 +107,13 @@ const TodoForm = ({addTask}) => {
               <option value="high">High</option>
             </select>
           </div>
-          <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 w-full">Add Task</button>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 w-full"
+          >
+            Add Task
+          </button>
         </form>
-
       </div>
     </div>
   );

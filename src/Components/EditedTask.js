@@ -1,13 +1,13 @@
-import React from 'react'
-import Header from './Header'
+import React from "react";
+import Header from "./Header";
 
-const EditedTask = ({editedTasks}) => {
-    console.log(editedTasks);
+const EditedTask = ({ editedTasks }) => {
+  console.log(editedTasks);
   return (
-    <div> 
-        <Header/>
-        <h2 className="text-center mt-2 text-2xl">Edited Task</h2>
-        <div className="px-4 mt-2">
+    <div>
+      <Header />
+      <h2 className="text-center mt-2 text-2xl">Edited Task</h2>
+      <div className="px-4 mt-2">
         {editedTasks.map((task, index) => (
           <div
             key={index}
@@ -20,14 +20,13 @@ const EditedTask = ({editedTasks}) => {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center">
-           
               <span
                 className={`inline-block px-2 py-1 text-sm font-semibold ${
-                  task.priorityLevel === 'high'
-                    ? 'bg-red-500 text-white'
-                    : task.priorityLevel === 'medium'
-                    ? 'bg-yellow-500 text-gray-900'
-                    : 'bg-green-500 text-white'
+                  task.priorityLevel === "high"
+                    ? "bg-red-500 text-white"
+                    : task.priorityLevel === "medium"
+                    ? "bg-yellow-500 text-gray-900"
+                    : "bg-green-500 text-white"
                 } rounded-md`}
               >
                 {task.priorityLevel}
@@ -35,11 +34,9 @@ const EditedTask = ({editedTasks}) => {
             </div>
           </div>
         ))}
-
-        </div>
-        
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default EditedTask
+export default EditedTask;

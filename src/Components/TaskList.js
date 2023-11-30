@@ -1,10 +1,6 @@
-
 import React, { useState } from "react";
 
-const TaskList = ({ tasks, updateTask ,handleCheckbox }) => {
-
-    
-
+const TaskList = ({ tasks, updateTask, handleCheckbox, deleteTask }) => {
   const [editTaskData, setEditTaskData] = useState({
     taskId: null,
     taskName: "",
@@ -28,7 +24,9 @@ const TaskList = ({ tasks, updateTask ,handleCheckbox }) => {
     setEditTaskData({ ...editTaskData, [name]: value });
   };
 
- 
+  const handleDeleteTask = (taskId) => {
+    deleteTask(taskId);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,6 +78,12 @@ const TaskList = ({ tasks, updateTask ,handleCheckbox }) => {
                 className="bg-blue-500 text-white py-1 px-4 rounded-md mb-2 sm:mb-0 sm:mr-2"
               >
                 Edit Task
+              </button>
+              <button
+                onClick={() => handleDeleteTask(task.id)}
+                className="bg-red-500 text-white py-1 px-4 rounded-md mb-2 sm:mb-0 sm:mr-2"
+              >
+                Delete Task
               </button>
               <span
                 className={`inline-block px-2 py-1 text-sm font-semibold ${
