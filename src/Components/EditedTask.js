@@ -6,7 +6,8 @@ const EditedTask = ({editedTasks}) => {
   return (
     <div> 
         <Header/>
-        <div className="px-4">
+        <h2 className="text-center mt-2 text-2xl">Edited Task</h2>
+        <div className="px-4 mt-2">
         {editedTasks.map((task, index) => (
           <div
             key={index}

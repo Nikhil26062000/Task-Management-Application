@@ -27,11 +27,20 @@ const TaskManagmentApp = () => {
     setTasks(updatedTasks);
   };
 
+  const handleCheckboxChange = (taskId) => {
+    setTasks((prevTasks) => {
+      return prevTasks.map((task) =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      );
+    });
+  };
+  
+
   const appRouter = createBrowserRouter([
     { path: '/', element: <Landing /> },
     { path: '/home', element: <Home addTask={addTask} /> },
     { path: '/editedtask', element: <EditedTask editedTasks={editedTasks} /> },
-    { path: '/mytask', element: <MyTask tasks={tasks} updateTask={updateTask} /> },
+    { path: '/mytask', element: <MyTask tasks={tasks} updateTask={updateTask}  handleCheckbox={handleCheckboxChange} /> },
   ]);
 
   return (

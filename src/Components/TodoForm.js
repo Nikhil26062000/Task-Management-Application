@@ -10,6 +10,8 @@ const TodoForm = ({addTask}) => {
     taskName: '',
     taskDescription: '',
     priorityLevel: 'low',
+    completed: false,
+
   });
 
   const handleInputChange = (e) => {
@@ -31,6 +33,8 @@ const TodoForm = ({addTask}) => {
       taskName: '',
       taskDescription: '',
       priorityLevel: 'low',
+      completed:false,
+      
     });
    
 
