@@ -3,7 +3,27 @@
 import React, { useEffect, useState } from 'react';
 
 const TodoForm = ({addTask}) => {
-  const [count,setCount] = useState(1);
+  const [numbers, setNumbers] = useState([]);
+  // const [id, setId] = useState();
+
+ 
+
+  const generateRandomNumber = () => {
+    const randomNumber = Math.floor(Math.random() * 1000000) + 1;
+
+  
+    return randomNumber;
+  };
+
+   const number = generateRandomNumber();
+  
+    
+
+
+ 
+
+   
+  const [count,setCount] = useState(number);
   // const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState({
     id:count,
@@ -26,10 +46,10 @@ const TodoForm = ({addTask}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
    addTask(task);
-   setCount(count+1);
+   setCount(count+1000);
   
     setTask({  
-      id:count+1,
+      id:count+1000,
       taskName: '',
       taskDescription: '',
       priorityLevel: 'low',
@@ -45,7 +65,7 @@ const TodoForm = ({addTask}) => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-md shadow-lg w-full sm:w-3/4 md:w-2/3 lg:w-1/2">
+      <div className="bg-white p-8 rounded-md shadow-lg w-full sm:w-3/4 md:w-2/3 lg:w-200/2">
         <h1 className="text-3xl font-bold mb-6 text-center">Create a Task</h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
@@ -60,7 +80,7 @@ const TodoForm = ({addTask}) => {
               placeholder="Enter task name"
               required
             />
-            <div className="text-red-500 text-xs mt-1">Please enter a task name.</div>
+            <div className="text-red-500 text-xs mt-200">Please enter a task name.</div>
           </div>
           <div>
             <label htmlFor="taskDescription" className="block text-gray-700 font-semibold">Task Description</label>
