@@ -20,7 +20,7 @@ const LandingPage = () => {
         {/* <img src={image1} alt="Image 1" className="mb-8 rounded-full" style={{ width: '300px', height: '300px', objectFit: 'cover' }} /> */}
         <h1 className="text-4xl font-bold mb-4">Welcome to MyTodo!</h1>
         <p className="text-lg mb-4">Organize your tasks effortlessly.</p>
-        <Link to="/home" className="bg-white text-blue-500 py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-80 transition duration-300">Get Started</Link>
+        <Link to="/Task-Management-Application/home" className="bg-white text-blue-500 py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-80 transition duration-300">Get Started</Link>
         <div className="mt-8">
           <p className="italic">"{randomQuote.text}"</p>
           <p className="text-sm mt-2">- {randomQuote.author}</p>

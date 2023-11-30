@@ -10,17 +10,17 @@ const Header = () => {
         </div>
         <ul className="flex space-x-4">
           <li>
-            <Link to="/home" className="hover:text-gray-300">
+            <Link to="/Task-Management-Application/home" className="hover:text-gray-300">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/mytask" className="hover:text-gray-300">
+            <Link to="/Task-Management-Application/mytask" className="hover:text-gray-300">
               My Tasks
             </Link>
           </li>
           <li>
-            <Link to="/editedtask" className="hover:text-gray-300">
+            <Link to="/Task-Management-Application/editedtask" className="hover:text-gray-300">
               Edited Tasks
             </Link>
           </li>

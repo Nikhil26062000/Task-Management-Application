@@ -57,11 +57,11 @@ const TaskManagmentApp = () => {
   };
 
   const appRouter = createBrowserRouter([
-    { path: "/", element: <Landing /> },
-    { path: "/home", element: <Home addTask={addTask} /> },
-    { path: "/editedtask", element: <EditedTask editedTasks={editedTasks} /> },
+    { path: "/Task-Management-Application/", element: <Landing /> },
+    { path: "/Task-Management-Application/home", element: <Home addTask={addTask} /> },
+    { path: "/Task-Management-Application/editedtask", element: <EditedTask editedTasks={editedTasks} /> },
     {
-      path: "/mytask",
+      path: "/Task-Management-Application/mytask",
       element: (
         <MyTask
           tasks={tasks}
@@ -71,9 +71,7 @@ const TaskManagmentApp = () => {
         />
       ),
     },
-  ],{
-    basename: "/Task-Management-Application",
-  });
+  ]);
 
   return (
     <div>
